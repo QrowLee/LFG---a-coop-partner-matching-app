@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity">
+
+    <EditText
+        android:id="@+id/Discordtag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/discord_tag"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/customGames"
+        app:layout_constraintTop_toBottomOf="@+id/MinecraftServer"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <EditText
+        android:id="@+id/MinecraftServer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/minecraft_server_address"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/Discordtag"
+        app:layout_constraintTop_toBottomOf="@+id/TF2Details"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <EditText
+        android:id="@+id/TF2Details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/tf2_class_and_rank"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/MinecraftServer"
+        app:layout_constraintTop_toBottomOf="@+id/FFXIVServer"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <EditText
+        android:id="@+id/FFXIVServer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/ffxiv_server_and_free_company"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/TF2Details"
+        app:layout_constraintTop_toBottomOf="@+id/coop" />
+
+    <EditText
+        android:id="@+id/customGames"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/custom_games"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/submit"
+        app:layout_constraintTop_toBottomOf="@+id/Discordtag"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <CheckBox
+        android:id="@+id/pvefocus"
+        android:layout_width="204dp"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckbox2Clicked"
+        android:text="@string/pve_focused"
+        app:layout_constraintBottom_toTopOf="@+id/coop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/competitive"
+        app:layout_constraintTop_toTopOf="@+id/competitive"
+        tools:ignore="UsingOnClickInXml" />
+
+    <CheckBox
+        android:id="@+id/achievement"
+        android:layout_width="204dp"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckbox2Clicked"
+        android:text="@string/achievement_hunter"
+        app:layout_constraintBottom_toTopOf="@+id/pvefocus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/casual"
+        app:layout_constraintTop_toBottomOf="@+id/profilesettings" />
+
+    <CheckBox
+        android:id="@+id/competitive"
+        android:layout_width="204dp"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckbox2Clicked"
+        android:text="@string/competitive"
+        app:layout_constraintBottom_toTopOf="@+id/coop"
+        app:layout_constraintEnd_toStartOf="@+id/pvefocus"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="UsingOnClickInXml" />
+
+    <CheckBox
+        android:id="@+id/coop"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckbox2Clicked"
+        android:text="@string/co_op_focused"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pvefocus"
+        tools:ignore="UsingOnClickInXml" />
+
+    <CheckBox
+        android:id="@+id/casual"
+        android:layout_width="204dp"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckbox2Clicked"
+        android:text="@string/casual"
+        app:layout_constraintBottom_toTopOf="@+id/competitive"
+        app:layout_constraintEnd_toStartOf="@+id/achievement"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profilesettings"
+        tools:ignore="UsingOnClickInXml" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="logoutUser"
+        android:text="@string/signout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/profilesettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/change_profile_settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
